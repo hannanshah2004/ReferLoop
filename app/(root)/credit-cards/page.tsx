@@ -6,8 +6,30 @@ import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
 import seedrandom from 'seedrandom' // Import seedrandom library
 
+// Define the types for the data
+interface User {
+  name: string;
+  avatar: string;
+  trustScore: number;
+}
+
+interface Referral {
+  title: string;
+  promotion: string;
+  details: string;
+  link: string;
+  code: string;
+  image: string;
+}
+
+interface Post {
+  id: number;
+  user: User;
+  referral: Referral;
+}
+
 // Mock data generator with a fixed seed
-const generateMockData = (start: number, end: number, seed: string) => {
+const generateMockData = (start: number, end: number, seed: string): Post[] => {
   const rng = seedrandom(seed); // Initialize RNG with the fixed seed
   const cardTypes = ['Travel', 'Cashback', 'Rewards', 'Business', 'Student'];
   
@@ -30,7 +52,8 @@ const generateMockData = (start: number, end: number, seed: string) => {
 }
 
 export default function ReferralFeed() {
-  const [posts, setPosts] = useState([]) // Initialize with an empty array
+  // Initialize the state with the correct type
+  const [posts, setPosts] = useState<Post[]>([]) // Now it's an array of `Post` objects
   const [loading, setLoading] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const observer = useRef<IntersectionObserver | null>(null)
