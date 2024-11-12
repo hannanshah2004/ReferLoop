@@ -21,7 +21,7 @@ export default function ContactUs() {
             <CardContent className="space-y-4">
               <div className="flex items-center space-x-4">
                 <Mail className="h-6 w-6 text-primary" />
-                <span>support@referloop.com</span>
+                <span>referlooped@gmail.com</span>
               </div>
               <div className="flex items-center space-x-4">
                 <Phone className="h-6 w-6 text-primary" />

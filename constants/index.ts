@@ -63,7 +63,7 @@ export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
     { label: 'Support Team', value: '123-456-7890' },
-    { label: 'Email Support', value: 'support@referloop.com' },
+    { label: 'Email Support', value: 'referlooped@gmail.com' },
   ],
 };
 
