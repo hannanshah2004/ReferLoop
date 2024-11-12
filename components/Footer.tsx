@@ -77,4 +77,4 @@ const FooterColumn = ({ title, children }: FooterColumnProps) => {
   );
 };
 
-export default Footer;
+export default Footer
