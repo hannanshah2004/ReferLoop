@@ -31,7 +31,7 @@ export default function ContactUs() {
                 <MapPin className="h-6 w-6 text-primary" />
                 <span>123 ReferLoop St, San Francisco, CA 94105</span>
               </div>
-            ``  <div className="flex space-x-4 mt-6">
+              <div className="flex space-x-4 mt-6">
                 <Button variant="outline" size="icon">
                   <Facebook className="h-4 w-4" />
                 </Button>
