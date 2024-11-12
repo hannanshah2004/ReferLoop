@@ -4,49 +4,66 @@ import { useEffect, useState, useRef, useCallback } from 'react'
 import { ReferralPost } from '@/components/Referral-Post'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
+import seedrandom from 'seedrandom' // Import seedrandom library
 
-// Mock data generator
-const generateMockData = (start: number, end: number) => {
-  const cardTypes = ['Travel', 'Cashback', 'Rewards', 'Business', 'Student']
+// Mock data generator with a fixed seed
+const generateMockData = (start: number, end: number, seed: string) => {
+  const rng = seedrandom(seed); // Initialize RNG with the fixed seed
+  const cardTypes = ['Travel', 'Cashback', 'Rewards', 'Business', 'Student'];
+  
   return Array.from({ length: end - start }, (_, i) => ({
     id: start + i,
     user: {
       name: `User ${start + i}`,
       avatar: `/placeholder.svg?height=40&width=40`,
-      trustScore: Math.floor(Math.random() * 5) + 1,
+      trustScore: Math.floor(rng() * 5) + 1, // Use RNG to generate consistent values
     },
     referral: {
-      title: `${cardTypes[Math.floor(Math.random() * cardTypes.length)]} Card ${start + i}`,
-      promotion: `Get $${(Math.floor(Math.random() * 10) + 1) * 100} bonus`,
+      title: `${cardTypes[Math.floor(rng() * cardTypes.length)]} Card ${start + i}`,
+      promotion: `Get $${(Math.floor(rng() * 10) + 1) * 100} bonus`,
       details: `Apply now and spend $3000 in the first 3 months to get this amazing bonus!`,
       link: `https://example.com/referral/${start + i}`,
       code: `REF${start + i}`,
       image: `/placeholder.svg?height=50&width=80&text=Card+${start + i}`,
     },
-  }))
+  }));
 }
 
 export default function ReferralFeed() {
-  const [posts, setPosts] = useState(generateMockData(0, 10))
+  const [posts, setPosts] = useState([]) // Initialize with an empty array
   const [loading, setLoading] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const observer = useRef<IntersectionObserver | null>(null)
 
+  // Define a static seed (ensure it's consistent for SSR and CSR)
+  const seed = 'my-fixed-seed' // You can change this seed to something dynamic, if needed
+
+  // Fetch the initial posts using the fixed seed
+  useEffect(() => {
+    const initialPosts = generateMockData(0, 10, seed) // Pass seed to generate consistent posts
+    setPosts(initialPosts)
+  }, [seed])
+
   const lastPostElementRef = useCallback((node: HTMLDivElement | null) => {
     if (loading) return
     if (observer.current) observer.current.disconnect()
+    
     observer.current = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting) {
         setLoading(true)
         // Simulate API call
         setTimeout(() => {
-          setPosts(prevPosts => [...prevPosts, ...generateMockData(prevPosts.length, prevPosts.length + 10)])
+          setPosts(prevPosts => [
+            ...prevPosts,
+            ...generateMockData(prevPosts.length, prevPosts.length + 10, seed),
+          ])
           setLoading(false)
         }, 1000)
       }
     })
+
     if (node) observer.current.observe(node)
-  }, [loading])
+  }, [loading, seed])
 
   const filteredPosts = posts.filter(post =>
     post.referral.title.toLowerCase().includes(searchTerm.toLowerCase())
