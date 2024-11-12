@@ -1,7 +1,7 @@
 import { DollarSign, Users, Star } from 'lucide-react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
-import { ExpandableReferralCards } from '@/components/ExpandedRefferals'
+import { ExpandableReferralCards } from '@/components/ExpandedReferrals'
 
 export default function YourRewards() {
   const referralData = [
