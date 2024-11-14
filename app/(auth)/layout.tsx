@@ -1,4 +1,5 @@
 import { FirebaseProvider } from './contexts/FirebaseContext';
+import '../globals.css'
 
 export const metadata = {
   title: 'Next.js with Firebase Authentication',
