@@ -1,4 +1,4 @@
-import { signInWithPopup, signOut } from 'firebase/auth';
+import { signInWithPopup, signOut, GoogleAuthProvider } from 'firebase/auth';
 import { auth, provider } from './firebase';
 import { FirebaseError } from 'firebase/app';
 import { useRouter } from 'next/navigation'; // Use next/navigation for routing
@@ -6,10 +6,14 @@ import { useRouter } from 'next/navigation'; // Use next/navigation for routing
 // Google login function
 export const googleLogin = async () => {
   try {
-    await signInWithPopup(auth, provider);
+    const result = await signInWithPopup(auth, provider);
     console.log('User logged in with Google');
+    
+    // The signed-in user info.
+    const user = result.user;
     // Redirect the user after successful login
-    window.location.href = '/how-referloop-works';  // Or use router.push('/') for client-side navigation
+    // window.location.href = '/rewards';  // Or use router.push('/') for client-side navigation
+    return user
   } catch (error) {
     if (error instanceof FirebaseError) {
       console.error('Google login error: ', error.message);
@@ -34,3 +38,4 @@ export const logout = async () => {
     }
   }
 };
+

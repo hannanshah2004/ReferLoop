@@ -1,7 +1,7 @@
 'use client'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { googleLogin } from "../lib/auth"
+import { googleLogin } from "../../../lib/actions/auth"
 
 export default function LoginPage() {
   return (

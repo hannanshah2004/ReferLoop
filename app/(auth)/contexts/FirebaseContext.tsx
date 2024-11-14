@@ -1,7 +1,7 @@
 'use client';  // Ensures this component is treated as a client-side component
 
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
-import { auth, provider } from '../lib/firebase';  // Import provider from firebase
+import { auth, provider } from '../../../lib/actions/firebase';  // Import provider from firebase
 import { signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth';
 import { useRouter } from 'next/navigation';  // Use next/navigation for routing
 
