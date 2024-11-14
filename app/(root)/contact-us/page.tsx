@@ -25,11 +25,11 @@ export default function ContactUs() {
               </div>
               <div className="flex items-center space-x-4">
                 <Phone className="h-6 w-6 text-primary" />
-                <span>123-456-7890</span>
+                <span>212-656-3000</span>
               </div>
               <div className="flex items-center space-x-4">
                 <MapPin className="h-6 w-6 text-primary" />
-                <span>123 ReferLoop St, San Francisco, CA 94105</span>
+                <span>Financial District, New York                </span>
               </div>
               <div className="flex space-x-4 mt-6">
                 <Button variant="outline" size="icon">
