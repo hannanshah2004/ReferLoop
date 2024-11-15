@@ -20,7 +20,8 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        btn_green: "bg-green-500 text-white shadow hover:bg-green-400", // Add btn_green variant
+        solid: "bg-blue-500 text-white shadow hover:bg-blue-400",  // Added 'solid' variant
+        btn_green: "bg-green-500 text-white shadow hover:bg-green-400", // Added 'btn_green' variant
       },
       size: {
         default: "h-9 px-4 py-2",
@@ -36,7 +37,6 @@ const buttonVariants = cva(
   }
 )
 
-
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
@@ -48,7 +48,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+        className={cn(buttonVariants({ variant, size, className }))} 
         ref={ref}
         {...props}
       />
