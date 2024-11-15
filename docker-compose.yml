@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: npm run start  # Use 'npm run start' for production mode in Next.js
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    ports:
+      - "3000:3000"  # Expose port 3000 for Next.js
+    env_file:
+      - .env
+    depends_on:
+      - db
+    environment:
+      - NEXT_PUBLIC_API_URL=http://api_url  # Add any environment variables specific to your Next.js app
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=your_db_user
+      - POSTGRES_PASSWORD=your_db_password
+      - POSTGRES_DB=your_db_name
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:  # Volume to persist the PostgreSQL data
