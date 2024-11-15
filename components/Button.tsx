@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-// Define ButtonProps type with specific allowed variants
+// Define ButtonProps type to include "solid"
 type ButtonProps = {
   type: 'button' | 'submit';
   title: string;
   icon?: string;
-  variant: 'default' | 'outline' | 'secondary' | 'destructive' | 'ghost';  // Define specific allowed variants
+  variant: 'default' | 'outline' | 'secondary' | 'destructive' | 'ghost' | 'solid';  // Add 'solid' to valid variants
   full?: boolean;
   onClick?: () => void;  // Add onClick as an optional prop
 }
