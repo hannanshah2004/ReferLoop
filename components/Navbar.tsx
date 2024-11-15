@@ -40,7 +40,7 @@ const Navbar = () => {
           type="button"
           title="Sign Up"
           icon="/user.svg"
-          variant="btn_dark_green"
+          variant="solid"
           onClick={handleSignUp}  // Trigger the handleSignUp function on click
         />
       </div>
