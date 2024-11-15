@@ -38,7 +38,7 @@ export const getUserInfo = async ({ userId }: {userId: string}) => {
         path: "/",
         httpOnly: true,
         sameSite: "strict",
-        secure: true,
+        secure: false,
       });
   
       const user = await getUserInfo({ userId: session.userId }) 
@@ -85,7 +85,7 @@ export const getUserInfo = async ({ userId }: {userId: string}) => {
         path: "/",
         httpOnly: true,
         sameSite: "strict",
-        secure: true,
+        secure: false,
       });
   
       return parseStringify(newUser);
