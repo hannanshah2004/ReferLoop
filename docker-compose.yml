@@ -3,9 +3,11 @@ version: '3'
 services:
   web:
     build: .
-    command: npm run start  # Use 'npm run start' for production mode in Next.js
-    volumes:
-      - .:/app  # Mount the current directory to /app in the container
+    # Removed 'command' to use CMD from Dockerfile
+    # command: npm run start  # Remove this line
+    # Removed volume mount to prevent overwriting /app
+    # volumes:
+    #   - .:/app  # Remove these lines
     ports:
       - "3000:3000"  # Expose port 3000 for Next.js
     env_file:
