@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Static export configuration
+  output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
   images: {
     unoptimized: true, // Unoptimized images (optional)
   },

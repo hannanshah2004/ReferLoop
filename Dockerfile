@@ -2,8 +2,9 @@
 FROM node:18-alpine
 
 # Set environment variables
-ENV PYTHONUNBUFFERED=1
-ENV DOCKER_BUILD=True
+#ENV PYTHONUNBUFFERED=1
+#ENV DOCKER_BUILD=True
+ENV BUILD_STANDALONE true
 
 # Set the working directory
 WORKDIR /app
