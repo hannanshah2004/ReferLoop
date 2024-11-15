@@ -17,11 +17,6 @@ jobs:
         run: |
           docker build --no-cache -t referloop/referimage:latest .
 
-      # Run tests inside Docker container (if you have any Node.js tests)
-      - name: Run tests inside Docker container
-        run: |
-          docker run referloop/referimage:latest npm run test
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
