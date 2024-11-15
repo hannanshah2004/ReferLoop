@@ -120,28 +120,28 @@ export default function ReferralFeed() {
         {/* Top Row of Filters */}
         <div className="flex justify-center flex-wrap gap-4 mb-4">
           <Button
-            variant={filters.category === 'Business' ? 'solid' : 'outline'}
+            variant={filters.category === 'Business' ? 'default' : 'outline'}
             onClick={() => handleFilterChange(filters.category === 'Business' ? '' : 'Business', 'category')}
             className="w-[200px]"
           >
             Business
           </Button>
           <Button
-            variant={filters.category === 'Personal' ? 'solid' : 'outline'}
+            variant={filters.category === 'Personal' ? 'default' : 'outline'}
             onClick={() => handleFilterChange(filters.category === 'Personal' ? '' : 'Personal', 'category')}
             className="w-[200px]"
           >
             Personal
           </Button>
           <Button
-            variant={filters.annualFee === '$0' ? 'solid' : 'outline'}
+            variant={filters.annualFee === '$0' ? 'default' : 'outline'}
             onClick={() => handleFilterChange(filters.annualFee === '$0' ? '' : '$0', 'annualFee')}
             className="w-[200px]"
           >
             $0 Annual Fee
           </Button>
           <Button
-            variant={filters.annualFee === 'Annual Fee' ? 'solid' : 'outline'}
+            variant={filters.annualFee === 'Annual Fee' ? 'default' : 'outline'}
             onClick={() => handleFilterChange(filters.annualFee === 'Annual Fee' ? '' : 'Annual Fee', 'annualFee')}
             className="w-[200px]"
           >
@@ -152,28 +152,28 @@ export default function ReferralFeed() {
         {/* Bottom Row of Filters */}
         <div className="flex justify-center flex-wrap gap-4 mb-4">
           <Button
-            variant={filters.foreignTransactionFees === 'No' ? 'solid' : 'outline'}
+            variant={filters.foreignTransactionFees === 'No' ? 'default' : 'outline'}
             onClick={() => handleFilterChange(filters.foreignTransactionFees === 'No' ? '' : 'No', 'foreignTransactionFees')}
             className="w-[200px]"
           >
             No Foreign Transaction Fees
           </Button>
           <Button
-            variant={filters.cardCategory === 'Cash Back' ? 'solid' : 'outline'}
+            variant={filters.cardCategory === 'Cash Back' ? 'default' : 'outline'}
             onClick={() => handleFilterChange(filters.cardCategory === 'Cash Back' ? '' : 'Cash Back', 'cardCategory')}
             className="w-[200px]"
           >
             Cash Back
           </Button>
           <Button
-            variant={filters.cardCategory === 'Miles' ? 'solid' : 'outline'}
+            variant={filters.cardCategory === 'Miles' ? 'default' : 'outline'}
             onClick={() => handleFilterChange(filters.cardCategory === 'Miles' ? '' : 'Miles', 'cardCategory')}
             className="w-[200px]"
           >
             Miles
           </Button>
           <Button
-            variant={filters.cardCategory === 'Points' ? 'solid' : 'outline'}
+            variant={filters.cardCategory === 'Points' ? 'default' : 'outline'}
             onClick={() => handleFilterChange(filters.cardCategory === 'Points' ? '' : 'Points', 'cardCategory')}
             className="w-[200px]"
           >
