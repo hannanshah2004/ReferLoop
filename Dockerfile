@@ -1,4 +1,4 @@
-# Stage 1: Build the Next.js app
+# Stage 1: Build the Next.js apps
 FROM node:18-alpine AS builder
 
 WORKDIR /app
