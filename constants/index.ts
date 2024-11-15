@@ -55,7 +55,7 @@ export const FOOTER_LINKS = [
   },
   {
     title: 'Our Community',
-    links: ['Referral Tips', 'Credit Card Guide', 'ReferLoop Blog'],
+    links: ['Referral Tips', 'Credit Card Guide', 'ReferLoop Blogs'],
   },
 ];
 
