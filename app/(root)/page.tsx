@@ -3,8 +3,15 @@ import Features from "@/components/Features";
 import GetApp from "@/components/GetApp";
 import Guide from "@/components/Guide";
 import Hero from "@/components/Hero";
+import { getLoggedInUser } from '@/lib/actions/user.actions';
 
-export default function Home() {
+const Home = async()=> {
+  
+  // const loggedIn = await getLoggedInUser();
+
+  // if(!loggedIn) return;
+
+
   return (
     <>
       <Hero />
@@ -15,3 +22,5 @@ export default function Home() {
     </>
   )
 }
+
+export default Home

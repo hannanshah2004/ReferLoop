@@ -1,4 +1,3 @@
-import { FirebaseProvider } from './contexts/FirebaseContext';
 import '../globals.css'
 
 export const metadata = {
@@ -14,9 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <FirebaseProvider>
           {children}
-        </FirebaseProvider>
       </body>
     </html>
   );

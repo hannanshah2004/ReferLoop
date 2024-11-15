@@ -34,7 +34,7 @@ const Hero = () => {
           <Button 
             type="button" 
             title="Get Started" 
-            variant="solid" 
+            variant="btn_green" 
           />
         </div>
       </div>
