@@ -1,27 +1,23 @@
 # Use a specific version of Node.js that is compatible with Next.js
 FROM node:18-alpine
 
-# Set environment variables
-ENV PYTHONUNBUFFERED=1
-ENV DOCKER_BUILD=True
-
-# Set the working directory
+# Set the working directory for your application
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package.json and package-lock.json to install dependencies
 COPY package.json package-lock.json ./
 
-# Install dependencies
+# Install Node.js dependencies
 RUN npm install
 
-# Copy the rest of the application
+# Copy the rest of your application code
 COPY . .
 
-# Build the Next.js app
+# Build the Next.js application
 RUN npm run build
 
-# Expose port 3000 (default Next.js port)
+# Expose the port that Next.js runs on (default: 3000)
 EXPOSE 3000
 
-# Command to run the Next.js app
+# Set the command to start the Next.js app
 CMD ["npm", "start"]
