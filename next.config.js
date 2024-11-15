@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  experimental: {
+    serverActions: true, // Enable Server Actions feature
+  },
 };
 
 module.exports = nextConfig;
