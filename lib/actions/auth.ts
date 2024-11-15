@@ -12,7 +12,7 @@ export const googleLogin = async () => {
     // The signed-in user info.
     const user = result.user;
     // Redirect the user after successful login
-    // window.location.href = '/rewards';  // Or use router.push('/') for client-side navigation
+    window.location.href = '/rewards';  // Or use router.push('/') for client-side navigation
     return user
   } catch (error) {
     if (error instanceof FirebaseError) {
