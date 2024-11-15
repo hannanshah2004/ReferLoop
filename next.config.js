@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
+  output: 'standalone',
   images: {
-    unoptimized: true, // Unoptimized images (optional)
+    unoptimized: true,
   },
 };
 
