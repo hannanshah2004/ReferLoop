@@ -62,7 +62,7 @@ export const FOOTER_LINKS = [
 export const FOOTER_CONTACT_INFO = {
   title: 'Contact Us',
   links: [
-    { label: 'Support Team', value: '201-456-7890' },
+    { label: 'Support Teams', value: '201-456-7890' },
     { label: 'Email Support', value: 'referlooped@gmail.com' },
   ],
 };
