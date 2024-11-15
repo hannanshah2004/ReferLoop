@@ -15,7 +15,7 @@ services:
     depends_on:
       - db
     environment:
-      - NEXT_PUBLIC_API_URL=http://api_url  # Add any environment variables specific to your Next.js app
+      - HOST=0.0.0.0
 
   db:
     image: postgres:13
