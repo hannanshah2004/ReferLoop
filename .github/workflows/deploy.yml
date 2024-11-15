@@ -31,7 +31,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      # Deploy to EC2 and run Docker image locally with no cache
+      # Deploy to EC2 and run Docker image locally with no caches
       - name: Deploy to EC2
         env:
           HOSTNAME: ${{ secrets.EC2_HOST }}
