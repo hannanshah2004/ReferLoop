@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-// Define ButtonProps type to include onClick
+// Define ButtonProps type with specific allowed variants
 type ButtonProps = {
   type: 'button' | 'submit';
   title: string;
   icon?: string;
-  variant: string;
+  variant: 'default' | 'outline' | 'secondary' | 'destructive' | 'ghost';  // Define specific allowed variants
   full?: boolean;
   onClick?: () => void;  // Add onClick as an optional prop
 }
