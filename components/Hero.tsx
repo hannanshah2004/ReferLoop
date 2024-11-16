@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Button from './Button'
 
 const Hero = () => {
@@ -31,26 +32,29 @@ const Hero = () => {
         </div>
 
         <div className="flex flex-col w-full gap-3 sm:flex-row">
-          <Button 
-            type="button" 
-            title="Get Started" 
-            variant="btn_green" 
-          />
+          {/* Wrap Button in a Link component */}
+          <Link href="/sign-up">
+            <Button 
+              type="button" 
+              title="Get Started" 
+              variant="btn_green" 
+            />
+          </Link>
         </div>
       </div>
 
       <div className="relative flex flex-1 items-start justify-center">
-  <div className="relative z-20 w-full max-w-[1200px] bg-white px-8 py-10 mt-10">
-    <div className="flex justify-center">
-      <Image
-        src="/img-4.png"  
-        alt="Your Referrals"
-        width={1000}  
-        height={1000} 
-      />
-    </div>
-  </div>
-</div>
+        <div className="relative z-20 w-full max-w-[1200px] bg-white px-8 py-10 mt-10">
+          <div className="flex justify-center">
+            <Image
+              src="/img-4.png"  
+              alt="Your Referrals"
+              width={1000}  
+              height={1000} 
+            />
+          </div>
+        </div>
+      </div>
     </section>
   )
 }

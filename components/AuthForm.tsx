@@ -22,11 +22,12 @@ import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
-} from '@/components/ui/card'
+  CardFooter,  // Make sure this import exists
+} from '@/components/ui/card' // Correct import path
 import { getLoggedInUser, signUp, signIn } from '@/lib/actions/user.actions'
+import Image from 'next/image'
 
 const formSchema = z.object({
   email: z.string().email({ message: 'Invalid email address' }),
@@ -75,7 +76,10 @@ export default function AuthForm({ type = 'sign-in' }: { type?: 'sign-in' | 'sig
   return (
     <Card className="w-full max-w-md mx-auto bg-white shadow-lg">
       <CardHeader className="space-y-1 bg-white">
-        <CardTitle className="text-2xl font-bold text-center text-gray-900">ReferLoop</CardTitle>
+        {/* Add ReferLoop logo here */}
+        <Link href="/">
+          <Image src="/ReferLoop.jpg" alt="ReferLoop logo" width={150} height={50} className="mx-auto mb-4 cursor-pointer" />
+        </Link>
         <CardDescription className="text-center text-gray-600">
           Connect, Share, and Earn Rewards
         </CardDescription>
