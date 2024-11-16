@@ -1,7 +1,7 @@
 import '../globals.css'
 
 export const metadata = {
-  title: 'Next.js with Firebase Authentication',
+  title: 'ReferLoop Login',
   description: 'Firebase Authentication Integration with Next.js',
 };
 
